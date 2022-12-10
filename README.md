@@ -1,7 +1,10 @@
 # CRUD
 
 ### Iniciar serviços
-    make up-all
+    make up
+
+### Parar serviços
+    make down
 
 ### Redis cli
     make redis-cli

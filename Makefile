@@ -1,5 +1,7 @@
-up-all:
+up:
 	docker-compose up -d
+down:
+	docker-compose down
 up-express:
 	docker-compose up express
 up-mongo:
