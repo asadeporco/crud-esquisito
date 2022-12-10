@@ -1,3 +1,4 @@
+up-all: up-express up-mongo up-redis
 up-express:
 	docker-compose up express
 up-mongo:

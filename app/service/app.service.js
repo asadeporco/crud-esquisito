@@ -3,7 +3,7 @@ var client = require('../redis/redis-client.js');
 
 function createTodo({id, title, description, done}){
     (async () =>{
-        await client.hSet(id, {'id': id, 'title': title, 'description': description});
+        await client.hSet(id, {'id': id, 'title': title, 'description': description, 'done': done ? 'true': 'false'});
     })()
 }
 
@@ -23,10 +23,8 @@ async function getAllTodos() {
     const keys = []
 
     for await (const key of client.scanIterator()) {
-        // keys.push(await client.hGet)
         const todo = await client.hGetAll(key)
         keys.push(todo)
-        // const a = 1;
     }
     return new Promise(resolve => {
         resolve(keys)

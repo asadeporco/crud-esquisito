@@ -25,7 +25,6 @@ exports.create = (req, res) => {
 };
 exports.findAll = (req, res) => {
   getAllTodos().then(todos => {
-    const a = 1;
     res.send(todos);
   })
 };
