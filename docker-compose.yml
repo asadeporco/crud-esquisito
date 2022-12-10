@@ -3,7 +3,7 @@ version: "3.8"
 services: 
   express:
     build: .
-    command: node ./app.js
+    command: npm start
     container_name: express
     volumes: 
       - .:/app
@@ -44,3 +44,5 @@ services:
       - "6379:6379"
     volumes:
       - /home/duducp/Redis:/var/lib/postgresql/data
+    depends_on:
+      - mongo
