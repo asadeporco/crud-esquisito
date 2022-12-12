@@ -1,14 +1,14 @@
 const { response } = require('express');
 var client = require('../redis/redis-client.js');
 
-function createTodo({id, title, description, done}){
-    (async () =>{
-        await client.hSet(id, {'id': id, 'title': title, 'description': description, 'done': done ? 'true': 'false'});
+function createTodo({ id, title, description, done }) {
+    (async () => {
+        await client.hSet(id, { 'id': id, 'title': title, 'description': description, 'done': done ? 'true' : 'false' });
     })()
 }
 
-function deleteTodo(id){
-    (async () =>{
+function deleteTodo(id) {
+    (async () => {
         await client.del(id);
     })()
 }

@@ -1,6 +1,6 @@
 const App = require("../model/app.model.js");
 const { createTodo, deleteTodo, getTodoById, getAllTodos } = require("../service/app.service.js");
-require('../service/app.service.js');
+
 
 exports.create = (req, res) => {
   const incomingData = {

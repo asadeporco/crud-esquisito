@@ -18,12 +18,6 @@ mongoose
     process.exit();
   });
 
-const client = redis.createClient({
-  url: 'redis://default:admin@redis:6379/' 
-});
-
-client.on('error', (err) => console.log('Redis Client Error', err));
-
 const app = express();
 
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -37,7 +31,7 @@ app.get("/", (req, res) => {
 
 let PORT = 3000;
 
-require("./app/routes/app.routes.js")(app, client);
+require("./app/routes/app.routes.js")(app);
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);
 });
